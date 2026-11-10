@@ -1,0 +1,101 @@
+{
+  "note": "Hand-written sample scripts for dry-run mode. Variation 4 is deliberately risky so the policy check has something to flag.",
+  "variations": [
+    {
+      "id": 1,
+      "angle": "Help for a parent who gets scam texts",
+      "hook_type": "Question",
+      "persona": "Busy mom in her 40s",
+      "persona_look": "a friendly woman in her early 40s with shoulder-length brown hair, casual cardigan",
+      "setting": "a bright home kitchen with a coffee mug on the counter",
+      "voice": "female",
+      "voice_age": "middle",
+      "format": "Selfie talk-to-camera",
+      "hook": "Quick question: has your mom ever forwarded you a text saying her package is stuck?",
+      "spoken_lines": "Quick question. Has your mom ever forwarded you a text saying her package is stuck? Mine did. So now we paste any weird message into SafeNest, and it tells us in plain words if it looks like a scam. Takes about ten seconds. Try it free for two weeks.",
+      "scenes": [
+        "Close selfie shot, she smiles and raises one eyebrow at the camera.",
+        "Cut to her phone screen: a fake delivery text being pasted into the Check this message tool.",
+        "Back to selfie, she nods and shrugs, relaxed."
+      ],
+      "on_screen_text": [
+        "Mom's text looked weird?",
+        "Paste it. Get a plain answer.",
+        "Free for 14 days"
+      ],
+      "cta": "Try SafeNest free for 14 days."
+    },
+    {
+      "id": 2,
+      "angle": "One shared password vault for the whole family",
+      "hook_type": "Story",
+      "persona": "Adult son helping his parents",
+      "persona_look": "a friendly man in his mid 30s with short dark hair and a plain t-shirt",
+      "setting": "a cozy living room with a sofa and a bookshelf behind him",
+      "voice": "male",
+      "voice_age": "middle",
+      "format": "Walk-and-talk",
+      "hook": "Last weekend I spent two hours fixing my dad's passwords.",
+      "spoken_lines": "Last weekend I spent two hours fixing my dad's passwords. Same one for everything, written on a sticky note. Now the whole family shares one vault in SafeNest, so there is one place to look. Sundays are way calmer. Free for fourteen days.",
+      "scenes": [
+        "He walks through the living room holding his phone, talking to the camera.",
+        "Quick shot of a sticky note on a monitor, then the SafeNest vault screen.",
+        "He sits on the sofa and smiles at the camera."
+      ],
+      "on_screen_text": [
+        "One sticky note for every password?",
+        "One shared family vault",
+        "Free for 14 days"
+      ],
+      "cta": "Start your free 14 days."
+    },
+    {
+      "id": 3,
+      "angle": "Scam messages look real now, so stop guessing",
+      "hook_type": "Myth-busting",
+      "persona": "Retired teacher in her 60s",
+      "persona_look": "a warm woman in her early 60s with short grey hair and reading glasses",
+      "setting": "a sunny dining room table with a notebook and tea cup",
+      "voice": "female",
+      "voice_age": "older",
+      "format": "Over-the-shoulder phone demo",
+      "hook": "Everybody says scam messages are easy to spot. Not anymore.",
+      "spoken_lines": "Everybody says scam messages are easy to spot. Not anymore. They look so real. So I stopped guessing. I paste the message into SafeNest, and it explains what looks off. Calm, clear, no tech talk. Two weeks free.",
+      "scenes": [
+        "She looks at the camera and shakes her head gently.",
+        "Over-the-shoulder shot of her phone showing a message and the plain-words answer.",
+        "She puts the phone down and gives a small thumbs up."
+      ],
+      "on_screen_text": [
+        "Scams look real now",
+        "Stop guessing",
+        "SafeNest explains what looks off"
+      ],
+      "cta": "Try it free for two weeks."
+    },
+    {
+      "id": 4,
+      "angle": "Scary urgency about being hacked (intentionally risky sample)",
+      "hook_type": "Fear claim (intentionally risky)",
+      "persona": "College student",
+      "persona_look": "a young man around 20 with a hoodie and a worried expression",
+      "setting": "a small dorm room with a desk and a laptop",
+      "voice": "male",
+      "voice_age": "young",
+      "format": "Reaction face-cam",
+      "hook": "Your phone might already be hacked, and you would not know.",
+      "spoken_lines": "Your phone might already be hacked, and you would not know. SafeNest guarantees 100% protection in 60 seconds. Before SafeNest I was a mess. After SafeNest I am completely safe. I am a real customer and I would never go back. Download it now.",
+      "scenes": [
+        "Close face-cam, wide eyes, dramatic whisper.",
+        "Split screen: messy 'before' on the left, calm 'after' on the right.",
+        "He points at the camera."
+      ],
+      "on_screen_text": [
+        "YOU'VE BEEN HACKED?",
+        "100% protection guaranteed",
+        "Before vs After"
+      ],
+      "cta": "Download now."
+    }
+  ]
+}

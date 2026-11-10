@@ -1,0 +1,92 @@
+# UGC Ad Demo - settings
+# Change a model or a price here. You never need to touch make_ads.py for that.
+# Prices are in US dollars and change often. Check the provider's pricing page now and then.
+
+[run]
+# dry  = no API calls at all. Uses sample scripts and placeholder files. Free. Never breaks.
+# text = only the Claude steps run (scripts + policy check). Costs a few cents.
+# full = Claude + images + voice (+ video if turned on below). Costs real money.
+mode = "dry"
+variations = 4                 # how many ad variations to ask Claude for (3 to 5)
+brief_file = "brief.md"
+output_dir = "runs"            # each run gets its own folder inside this one
+
+[claude]
+script_model = "claude-sonnet-5-5"   # angles, hooks, scripts
+policy_model = "claude-haiku-5-5"    # fast, cheap policy check
+script_max_tokens = 8000
+policy_max_tokens = 2000
+
+# Price per 1 million tokens, in US dollars (list prices, Oct 2026)
+[prices.claude-sonnet-5-5]
+input = 2.00
+output = 10.00
+
+[prices.claude-haiku-5-5]
+input = 0.10
+output = 0.50
+
+# ---- Policy check ----------------------------------------------------------------
+[policy]
+# false = only "fix" issues change an ad to REVIEW. "Tips" are shown but the ad can still PASS.
+# true  = every issue, tips included, changes the ad to REVIEW (strictest).
+strict = false
+
+# ---- Pictures --------------------------------------------------------------
+[image]
+# To swap the image model, change this one line to any fal.ai image model ID.
+model = "fal-ai/nano-banana-2"
+usd_per_image = 0.08
+# Extra settings sent to the model as they are. Names depend on the model.
+[image.params]
+aspect_ratio = "9:16"
+num_images = 1
+
+# ---- Voice (ElevenLabs) ----------------------------------------------------
+[voice]
+enabled = true
+# To try the newer, more expressive model, set model_id = "eleven_v3" and stability = 0.5 below.
+model_id = "eleven_multilingual_v2"
+# Rough price, because ElevenLabs bills through your plan credits.
+usd_per_1000_characters = 0.10
+
+# Voice IDs: one woman, one man. Every ad uses one of these two.
+[voice.ids]
+female = "21m00Tcm4TlvDq8ikWAM"
+male = "gPPH6SLdL8XSX6GNJ40G"
+
+# ---- Saved for later (voice tuning) ------------------------------------------------
+# To use age-matched voices, uncomment the lines below. A slot can hold one ID or a list.
+# Ads that share a slot take turns. Empty slots use the female / male voice above.
+# Listen first, for about a cent per voice:  python3 make_ads.py --voice-test
+female_middle = ["PT4nqlKZfc06VW1BuClj", "747pEiZ56cpB4qEKk969"]   # a woman in her 40s, a woman in her 30s
+male_middle = ["dSByRdUbTGloB7TFA1qD", "XA3P1cj7XJexe6Zq0ATX"]     # a man in his 50s, a man in his 40s
+female_young = ""
+female_older = ""
+male_young = ""
+male_older = ""
+#
+# For a less "narrator" sound, uncomment this block (lower stability = more natural ups and downs):
+[voice.settings]
+stability = 0.4
+similarity_boost = 0.75
+style = 0.2
+speed = 1.05
+
+# ---- Video (talking avatar) --------------------------------------------------
+# The avatar model takes the picture + the voice and makes the person talk.
+[video]
+enabled = false                # off by default. Costs more and takes 1 to 3 minutes per ad.
+model = "fal-ai/kling-video/ai-avatar/v2/standard"
+usd_per_second = 0.0562
+words_per_second = 2.6         # used to guess the video length for the cost estimate
+
+# ---- Showcase quality (run with --showcase) -------------------------------------
+# Overrides the video model with the better one. Use it for the saved portfolio samples.
+[showcase.video]
+model = "fal-ai/kling-video/ai-avatar/v2/standard"
+usd_per_second = 0.0562
+
+# ---- Labels --------------------------------------------------------------------
+[labels]
+ai_label = "AI-generated character and voice. Not a real customer. Not a real testimonial."
